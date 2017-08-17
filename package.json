@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/JF-13/noodle/issues"
   },
-  "homepage": "https://github.com/JF-13/noodle#readme"
+  "homepage": "https://github.com/JF-13/noodle#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mysql": "^2.14.1"
+  }
 }

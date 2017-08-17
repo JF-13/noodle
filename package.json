@@ -1,0 +1,19 @@
+{
+  "name": "noodle",
+  "version": "1.0.0",
+  "description": "fitbit for your plants",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JF-13/noodle.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JF-13/noodle/issues"
+  },
+  "homepage": "https://github.com/JF-13/noodle#readme"
+}

@@ -1,21 +1,29 @@
-// Create logic to handle the api routes specified in the noodle controller for a sensor client.
+module.exports = function(sequelize, DataTypes) {
+    var Sensor = sequelize.define("Sensor", {
+        pumpOn: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        },
+        lightOn: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        },
+        autoOn: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        },
+        targetSoil:{
+            type:DataTypes.DECIMAL(10,3),
+        }
+    });
 
+    Sensor.associate = function(models) {
+        // Associating Sensor with Data
+        Sensor.hasMany(models.Data, {
+            onDelete: "cascade"
+        });
+    };
 
-var sensor = {
-    
-    //return any configuration details set up by user
-    //could have sensor check this on a timer and then turn on/off relay switches based on the returned values
-    getConfig:function(){
-
-    },
-    
-    //method to record a new data point 
-    //TODO - determine what data we want to collect.
-    recordNewData: function(temp, humidity, ...){
-        
-        
-    },
-      
-}
-
-module.exports = sensor;
+    return Sensor;
+};
+  

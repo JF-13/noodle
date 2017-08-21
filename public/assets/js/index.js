@@ -1,0 +1,1 @@
+// Placeholder for js logic to be used on views

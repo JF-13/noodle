@@ -4,7 +4,8 @@
   "description": "fitbit for your plants",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -14,6 +15,9 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JF-13/noodle/issues"
+  },
+  "engines": {
+    "node": "6.10.2"
   },
   "homepage": "https://github.com/JF-13/noodle#readme",
   "dependencies": {

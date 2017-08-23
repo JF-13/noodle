@@ -12,10 +12,10 @@ var db = require("../models");
 module.exports = function(app) {
 
   // Each of the below routes just handles the HTML page that the user gets sent to.
-
     app.get("/", function(req, res) {
 
-        //query the database to get whatever data we want to render on the homepage
+        //query the sensor database - get array of sensors so we can setup our handlebars buttons
+        
         res.render("index", {
             //need to include whatever arrays we want to use
             "test": "Hello Handlebars!",

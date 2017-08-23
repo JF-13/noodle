@@ -1,23 +1,19 @@
 {
   "development": {
     "username": "root",
-    "password": "Lm8g7?42",
+    "password": "",
     "database": "noodle",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Lm8g7?42",
+    "password": "",
     "database": "noodle",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "Lm8g7?42",
-    "database": "noodle",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "use_env_variable": "JAWSDB_URL"
   }
 }

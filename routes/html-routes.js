@@ -18,7 +18,7 @@ module.exports = function(app) {
         
         res.render("index", {
             //need to include whatever arrays we want to use
-            "test": "Hello Handlebars!",
+            "test": "Hello World!"
         });
     });
 

@@ -13,9 +13,11 @@ module.exports = function(app) {
 
   // Each of the below routes just handles the HTML page that the user gets sent to.
 
-  // index route loads view.html
     app.get("/", function(req, res) {
+
+        //query the database to get whatever data we want to render on the homepage
         res.render("index", {
+            //need to include whatever arrays we want to use
             "test": "Hello Handlebars!",
         });
     });

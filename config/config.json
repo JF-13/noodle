@@ -1,21 +1,21 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "Lm8g7?42",
     "database": "noodle",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "",
+    "password": "Lm8g7?42",
     "database": "noodle",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": "",
+    "password": "Lm8g7?42",
     "database": "noodle",
     "host": "127.0.0.1",
     "dialect": "mysql"

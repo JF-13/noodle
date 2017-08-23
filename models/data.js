@@ -21,7 +21,10 @@ module.exports = function(sequelize, DataTypes) {
 		lightOn: {
 			type: DataTypes.BOOLEAN,
 		},
-		autoOn: {
+		autoLightOn: {
+			type: DataTypes.BOOLEAN,
+		},
+		autoPumpOn: {
 			type: DataTypes.BOOLEAN,
 		},
 		targetSoil:{

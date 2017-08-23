@@ -8,7 +8,11 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.BOOLEAN,
             defaultValue: false
         },
-        autoOn: {
+        autoLightOn: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        },
+        autoPumpOn: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
         },

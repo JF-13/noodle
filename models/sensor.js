@@ -1,5 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
     var Sensor = sequelize.define("Sensor", {
+        isOnline:{
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        },
         pumpOn: {
             type: DataTypes.BOOLEAN,
             defaultValue: false

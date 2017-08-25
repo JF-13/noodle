@@ -6,7 +6,9 @@ var db = require("../models");
 module.exports = function(app) {
     
     //landing page for app
-    app.get("/api/data", function(req, res) {
+
+    //TODO - change this route to be specific to a single sensor.
+    app.get("/api/data/", function(req, res) {
         db.Data.findAll({}).then(function(results) {
             res.json(results);
         });
@@ -36,6 +38,11 @@ module.exports = function(app) {
             res.json(results);
         });
     });
+
+    //TODO - add 6 routes to update the different status values for the sensor.
+
+    //TODO - add a single route for checking online status - for use on view
+    
 
 };
 

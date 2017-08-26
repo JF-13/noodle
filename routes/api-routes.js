@@ -11,7 +11,7 @@ module.exports = function(app) {
     app.get("/api/data/:id", function(req, res) {
         db.Data.findAll({
           where: {
-            id: req.params.id
+            SensorId: req.params.id
         }
         }).then(function(results) {
             res.json(results);

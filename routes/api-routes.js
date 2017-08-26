@@ -53,7 +53,7 @@ module.exports = function(app) {
             }
           })
         .then(function() {
-          res.json();
+          res.sendStatus(200);
         });
       });
 

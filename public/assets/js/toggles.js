@@ -2,7 +2,7 @@
 console.log("doing some js");
 
 var pumpOn = function(id){
-    var state = true;
+    var state = false;
 
     var updates = "id="+ id+"&pumpOn="+state;
 

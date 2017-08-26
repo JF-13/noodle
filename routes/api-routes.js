@@ -41,14 +41,13 @@ module.exports = function(app) {
 
     //TODO - add 6 routes to update the different status values for the sensor.
 
+
+    
     //a single route for checking online status - for use on view
     
-    app.get("/api/config/:id", function(req, res){
-        db.Sensor.findAll({
-            where: {
-                isOnline: req.params.isOnline
-            }
-        }).then(function(results) {
+    app.get("/api/config", function(req, res){
+        db.Sensor.findAll({})
+        .then(function(results) {
             res.json(results);
         });
     });

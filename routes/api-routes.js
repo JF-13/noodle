@@ -8,8 +8,12 @@ module.exports = function(app) {
     //landing page for app
 
     //TODO - change this route to be specific to a single sensor.
-    app.get("/api/data/", function(req, res) {
-        db.Data.findAll({}).then(function(results) {
+    app.get("/api/data/:id", function(req, res) {
+        db.Data.findAll({
+          where: {
+            id: req.params.id
+        }
+        }).then(function(results) {
             res.json(results);
         });
     });

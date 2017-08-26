@@ -39,9 +39,67 @@ module.exports = function(app) {
         });
     });
 
-    //TODO - add 6 routes to update the different status values for the sensor.
+    //TODO - add 5 routes to update the different status values for the sensor.
 
+    app.put("/api/pumpOn", function(req, res) {
+        db.Sensor.update(req.body,
+          {
+            where: {
+              id: req.body.id
+            }
+          })
+        .then(function() {
+          res.json();
+        });
+      });
 
+      app.put("/api/lightOn", function(req, res) {
+        db.Sensor.update(req.body,
+          {
+            where: {
+              id: req.body.id
+            }
+          })
+        .then(function() {
+          res.json();
+        });
+      });
+      
+      app.put("/api/autoLightOn", function(req, res) {
+        db.Sensor.update(req.body,
+          {
+            where: {
+              id: req.body.id
+            }
+          })
+        .then(function() {
+          res.json();
+        });
+      });
+
+      app.put("/api/autoPumpOn", function(req, res) {
+        db.Sensor.update(req.body,
+          {
+            where: {
+              id: req.body.id
+            }
+          })
+        .then(function() {
+          res.json();
+        });
+      });
+
+      app.put("/api/targetSoil", function(req, res) {
+        db.Sensor.update(req.body,
+          {
+            where: {
+              id: req.body.id
+            }
+          })
+        .then(function() {
+          res.json();
+        });
+      });
     
     //a single route for checking online status - for use on view
     

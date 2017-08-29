@@ -15,6 +15,14 @@ var updateDB = function(updates){
 //listener for pump on button
 $(document).on("click", ".js-pump-on", function(){
     var id=$(this).attr("data-id");
+    //update state on DB - the sensor will turn this off after 10 seconds
+    var updates = "id="+ id+"&pumpOn="+true;
+    updateDB(updates)
+});
+
+//listener for light button
+$(document).on("click", ".js-light-on", function(){
+    var id=$(this).attr("data-id");
     if($(this).attr("data-state") === "false"){
         //change data attr state and the newState to be saved to the DB.
         $(this).attr("data-state", "true"); 
@@ -25,14 +33,7 @@ $(document).on("click", ".js-pump-on", function(){
         $(this).attr("data-state", "false"); 
         var newState = false;        
     }; 
-    var updates = "id="+ id+"&pumpOn="+newState;
-    updateDB(updates)
-});
-
-//listener for light button
-$(document).on("click", ".js-light-on", function(){
-    var id=$(this).attr("data-id");
-    var updates = "id="+ id+"&lightOn="+true;
+    var updates = "id="+ id+"&lightOn="+newState;
     updateDB(updates)
 });
 

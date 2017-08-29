@@ -1,6 +1,6 @@
 
 
-var sensorId = 2
+var sensorId = 4;
 //GET THE DATA
 $.ajax({
     
@@ -70,6 +70,9 @@ var drawChart = function(data, targetDiv, keys, yAxisLabel, ymin, ymax, colors){
     return {
     name: name,
     values: data.map(function(d) {
+        if(name === "light"){
+            d[name] = 1 - parseFloat(d[name]);
+        }
         return {date: d.date, reading: +d[name]};
     })
     };

@@ -25,24 +25,14 @@ $(document).on("click", ".js-pump-on", function(){
         $(this).attr("data-state", "false"); 
         var newState = false;        
     }; 
-    var updates = "id="+ id+"&lightOn="+newState;
+    var updates = "id="+ id+"&pumpOn="+newState;
     updateDB(updates)
 });
 
 //listener for light button
 $(document).on("click", ".js-light-on", function(){
     var id=$(this).attr("data-id");
-    if($(this).attr("data-state") === "false"){
-        //change data attr state and the newState to be saved to the DB.
-        $(this).attr("data-state", "true"); 
-        var newState = true;
-    }
-    else{
-        //change data attr state and the newState to be saved to the DB.
-        $(this).attr("data-state", "false"); 
-        var newState = false;        
-    }; 
-    var updates = "id="+ id+"&lightOn="+newState;
+    var updates = "id="+ id+"&lightOn="+true;
     updateDB(updates)
 });
 
@@ -52,8 +42,10 @@ $(document).on("click", ".js-auto-on", function(){
     if($(this).attr("data-state") === "false"){
         var newState = true;
         var soilId = "#soil-target-"+id;
-        //set target soil value
-        var targetSoil = parseFloat($(soilId).val());
+        //set target soil value - hardcoding for now
+        //var targetSoil = parseFloat($(soilId).val());
+        var targetSoil = 0.750;
+
         if(targetSoil >= 0 && targetSoil<=1){
             //change data attr state and the newState to be saved to the DB.
             $(this).attr("data-state", "true"); 

@@ -1,1 +1,339 @@
 /*  custom styles */
+@import url('//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css');
+
+body {
+  background-color: rgb(23,33,42);
+}
+
+.head {
+  color: rgb(22,160,133);
+  font-family: 'Baloo Bhaijaan', cursive;
+  margin-top: 30px;
+  margin-bottom: 0;
+  float: left;
+}
+
+.title {
+  font-size: 6em;
+}
+
+.headUnderline {
+  margin: 0px 0px 5px 0px;
+  background-color: rgb(149, 165, 166);
+  width: 100%;
+  
+}
+
+.leftUnderline {
+  margin: 0 auto;
+  margin-bottom: 15px;
+  background-color: rgb(149, 165, 166);
+  width: 85%;
+  
+}
+
+
+.light {
+  display: table;
+  margin: auto;
+  background-color: white;
+  background: rgb(61, 86, 110);
+  color: rgb(149, 165, 166);
+  border-color: rgb(189, 195, 199);
+  width: 100%;
+  margin-bottom: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.water {
+  display: table;
+  margin: auto;
+  background-color: white;
+  background: rgb(61, 86, 110);
+  color: rgb(149, 165, 166);
+  border-color: rgb(189, 195, 199);
+  width: 100%;
+  margin-bottom: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.toggle {
+	display: table;
+	margin: 0 auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	width: 100%;
+	clear: both;
+}
+
+.return10 .toggle-group { transition: left 5s; -webkit-transition: left 5s;  }
+
+.plantTitle {
+  font-size: 36px;
+  display: table;
+  color: rgb(149,165,166);
+  /*color: rgb(236,240,241);*/
+  font-family: 'Encode Sans Condensed', sans-serif;
+  margin: 38px 5px 0px 5px;
+  vertical-align: text-bottom;
+  float: left;
+}
+
+.controlsTitle {
+  display: table;
+  margin: auto;
+  font-size: 20px;
+  /*color: rgb(149,165,166);*/
+  color: rgb(61,86,110);
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 30px;
+}
+
+.gauge-container {
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.fill-gauge {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.waterLevel-container {
+  font-size: 13px;
+  color: rgb(61,86,110);
+  text-align: center;
+  margin-top: -55px;
+}
+
+.waterLevel {
+  font-size: 13px;
+  color: rgb(61,86,110);
+  text-align: center;
+  margin: 0 auto;
+}
+
+.sensors {
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+.description {
+  color: rgb(149, 165, 166);
+  font-family: 'Questrial', sans-serif;
+  font-size: 15px;
+  margin-top: -10px;
+}
+
+.humidity {
+  color: rgb(22,160,133);
+}
+
+.temperature {
+  color: rgb(192,57,43);
+}
+
+.exposure {
+  color: #ec971f;
+}
+
+.moisture {
+  color: rgb(41,128,185);
+}
+
+.up {
+  color: rgb(61,86,110);
+
+}
+
+.down {
+  color: rgb(44,62,80);
+}
+
+.glyphicon {
+    font-size: 20px;
+}
+
+.glyphicon {
+	margin: 5px;
+	font-size: 16px;
+}
+
+/*graph styles!*/
+.axis path,
+.axis line {
+fill: none;
+stroke: white;
+shape-rendering: crispEdges;
+}
+
+.x.axis path {
+
+color: white;
+background-color: white;
+}
+
+
+
+.legend rect {
+fill:white;
+stroke: white;
+opacity:0.8;
+}
+
+.line {
+  stroke: white;
+  stroke-width: 1.5px;
+  fill: none;
+  color: white;
+}
+
+.tick {
+  color: white;
+  fill: none;
+  background-color: white;
+}
+text {
+  color: rgb(149, 165, 166);
+  fill: rgb(149, 165, 166);
+  background-color: none;
+}
+
+.legend rect {
+  fill: none;
+  border-radius: 10px;
+}
+
+/* Start JLM Styles */
+.cntr {
+	margin: 0 auto;
+}
+
+.chart-container {
+    clear:both;
+    width: 95%;
+	overflow: auto;
+}
+
+.chart-sub-container {
+	clear: both;
+	border: solid 1px rgb(23,33,42);;
+}
+
+.chart {
+    height: 225px;
+    border: 1px solid #bdc3c7;
+    background-color: #3d566e;
+	border-radius: 5px;
+	margin:8px 0px;
+}
+
+.logo-container {
+	margin: 0 auto;
+	margin-top: 25px;
+	margin-bottom: 9px;
+	width: 115px;
+
+}
+
+.logo {
+	height: 55px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.dropdown {
+  position: absolute;
+  left: 50%;
+  right: auto;
+  text-align: center;
+  transform: translate(-50%, 0);
+  margin-top: 75px;
+}
+
+
+.liquidFillGaugeText {
+	font-family: Helvetica;
+	font-weight: bold;
+	}
+
+.btn-success:hover {
+	background-color: #66cc00;
+}
+
+.btn-success:active {
+	background-color: #66cc00;
+}
+
+.btn-success:focus {
+	background-color: #66cc00;
+}
+
+.btn-success:visited {
+	background-color: #66cc00;
+}
+
+.btn-success {
+	background-color: #66cc00;
+}
+
+@media screen and (min-width: 640px) {
+    .chart {
+        height: 275px;
+        margin: 10px 0px;
+    }
+
+    .chart-container {
+        width: 90%;
+    }
+
+    .headUnderline {
+    	width: 90%;
+	}
+
+	.gauge-container {
+		width: 80%;
+		margin-top: 20px;
+	}
+
+}
+
+@media screen and (min-width: 960px) {
+    .break-left {    
+        float: left;
+    }
+
+    .break-right {
+        float: right;
+    }
+
+    .full {
+        clear: both;
+    }
+
+    .chart-sub-container{
+        width: 49%;
+		overflow: hidden;
+		clear: none;   
+    }
+
+    .chart {
+		height: 350px;
+		margin: 8px 0px;
+    }
+
+    .chart-container {
+        width: 85%;
+    }
+
+    .headUnderline {
+      width: 85%;
+	}
+	
+	.gauge-container {
+		width: 100%;
+		margin-top: 25px;
+	}
+
+}

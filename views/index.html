@@ -1,53 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Noodle</title>
-		<!-- JQuery -->
-		<script src="https://code.jquery.com/jquery.js"></script>
-		
-		<link rel="stylesheet" type="text/css" href="../public/assets/css/reset.css">
-		<link rel="stylesheet" type="text/css" href="../public/assets/css/style.css">
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>IoP: Connect With Your Plants</title>
 
-        <script src="../public/assets/js/index.js"></script>
-        <script src="../public/assets/js/toggles.js"></script>
-	</head>
-	<body>
-		<div>
-			<div>sensor1 buttons</div>
-			<button data-id="1" data-state="false" class="js-light-on">Light</button>
-			<button data-id="1" data-state="false" class="js-pump-on">Pump</button>
-			<button data-id="1" data-state="false" class="js-auto-on">Auto</button>
-			<div>
-				<input id="soil-target-1" placeholder= "target soil">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan|Montserrat" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan|Dancing+Script|Encode+Sans+Condensed|Montserrat|Questrial" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../public/assets/css/style.css">
+
+	<script src="../public/assets/js/liquidFillGauge.js" language="JavaScript"></script>
+	<style>
+
+	</style>
+</head>
+
+<body>
+
+	<!-- <div class="container"> -->
+
+	<div class="row">
+
+		<div class="col-md-3">
+			<div class="logo-container">
+					<img class="logo" src="../public/assets/images/iop_logo.svg" alt="IoP logo">
+			</div>
+			<hr class="leftUnderline">
+			<!--<h3 class="controlsTitle">system controls</h3>-->
+
+			<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-10">
+				<input class="toggle js-light-on" type="checkbox" data-state="false" id="light-toggle" data-id="2" checked data-toggle="toggle" data-on="<span class='glyphicon glyphicon-certificate'></span> LIGHT: ON" data-off="<span class='glyphicon glyphicon-certificate'></span> LIGHT: OFF" data-onstyle="warning" data-offstyle="default" data-width="100%" data-height="40">
+				</div>
+				<div class="col-md-1"></div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-1"></div>
+					<div class="col-md-10 checkbox">
+						<input class="toggle js-pump-on" type="checkbox" data-state="false" id="pump-toggle" data-id="2" checked data-toggle="toggle" data-on="<span class='glyphicon glyphicon-tint'></span> WATER: ON" data-off="<span class='glyphicon glyphicon-tint'></span> WATER: OFF" data-onstyle="info" data-offstyle="default" data-width="100%" data-height="40">
+					</div>
+				<div class="col-md-1"></div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-10">
+				<input class="toggle js-auto-on" type="checkbox" data-state="false" id="auto-toggle" data-id="2" checked data-toggle="toggle" data-on="<span class='glyphicon glyphicon-plane'></span> AUTO: ON" data-off="<span class='glyphicon glyphicon-plane'></span> AUTO: OFF" data-onstyle="success" data-offstyle="default" data-width="100%" data-height="40">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-10">
+					<div class="gauge-container">
+						
+						<svg class="fill-gauge" id="fillgauge1" onclick="gauge1.update(NewValue());"></svg>
+						<div class="waterLevel-container"><h3 class="waterLevel">RESERVOIR</h3></div>
+						
+					</div>
+				</div>
+				<div class="col-md-3"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-10">
+					<div class="dropdown-container">
+					<div class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="sensorDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Change sensor:
+					</button>
+					<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+						<button class="dropdown-item" type="button" data-id="1">Sensor 1</button>
+						<button class="dropdown-item" type="button" data-id="2">Sensor 2</button>
+						<button class="dropdown-item" type="button" data-id="3">Sensor 3</button>
+						<button class="dropdown-item" type="button" data-id="4">Sensor 4</button>
+					</div>
+					</div></div>
+				</div>
+				<div class="col-md-3"></div>
 			</div>
 		</div>
-		<div>
-			<div>sensor2 buttons</div>
-			<button data-id="2" data-state="false" class="js-light-on">Light</button>
-			<button data-id="2" data-state="false" class="js-pump-on">Pump</button>
-			<button data-id="2" data-state="false" class="js-auto-on">Auto</button>
-			<div>
-				<input id="soil-target-2" placeholder= "target soil">
+
+		<div class="col-md-9">
+			<div class="row">
+				<div class="plantTitle">Sensor #<span id="sensor-id">2</span>: <span id="plant-name">Ficus Bonsai</span></div>
+				<hr class="headUnderline">
+			</div>
+			<div class="row">
+				<!-- <div class="col-md-1"></div> -->
+				<div class="col-md-3">
+					<h3 class="sensors humidity" id="humid">
+				  	--% <span class="glyphicon glyphicon-menu-down down"></span>
+				  </h3>
+					<h3 class="sensors description">humidity</h3>
+				</div>
+				<div class="col-md-3">
+					<h3 class="sensors temperature" id="temp">
+					--°F <span class="glyphicon glyphicon-menu-up up"></span>
+					</h3>
+					<h3 class="sensors description">temperature</h3>
+				</div>
+				<div class="col-md-3">
+					<h3 class="sensors exposure" id="light">
+					-- <span class="glyphicon glyphicon-menu-down down"></span>
+					</h3>
+					<h3 class="sensors description">light condition</h3>
+				</div>
+				<div class="col-md-3">
+					<h3 class="sensors moisture" id="soil">
+					--% <span class="glyphicon glyphicon-menu-up up"></span>
+					</h3>
+					<h3 class="sensors description">soil moisture</h3>
+				</div>
+				<!-- <div class="col-md-1"></div> -->
+
+			</div>
+			<div class="row">
+        <div class="chart-container">
+            <div class="chart-sub-container break-left">
+                <div id="chart2" class="chart"></div>
+            </div>
+            <div class="chart-sub-container break-right">
+                <div id="chart1" class="chart"></div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <div id="chart3" class="chart full"></div>
+        </div>
+					</div>
+				</div>
 			</div>
 		</div>
-		<div>
-			<div>sensor3 buttons</div>
-			<button data-id="3" data-state="false" class="js-light-on">Light</button>
-			<button data-id="3" data-state="false" class="js-pump-on">Pump</button>
-			<button data-id="3" data-state="false" class="js-auto-on">Auto</button>
-			<div>
-				<input id="soil-target-3" placeholder= "target soil">
-			</div>
-		</div>
-		<div>
-			<div>sensor4 buttons</div>
-			<button data-id="4" data-state="false" class="js-light-on">Light</button>
-			<button data-id="4" data-state="false" class="js-pump-on">Pump</button>
-			<button data-id="4" data-state="false" class="js-auto-on">Auto</button>
-			<div>
-				<input id="soil-target-4" placeholder= "target soil">
-			</div>
-		</div>
-		
-	</body>
+
+	</div>
+	<!-- tonys charts -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="http://d3js.org/d3.v3.js"></script>
+	<script src="../public/assets/js/chart.js"></script>
+	<!-- </div> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+	<script type="text/javascript" src='../public/assets/js/toggles.js'></script>
+</body>
+
 </html>

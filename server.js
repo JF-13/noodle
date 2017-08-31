@@ -1,7 +1,7 @@
 // Dependencies
 var express = require("express");
 var bodyParser = require("body-parser");
-var exphbs = require("express-handlebars");
+//var exphbs = require("express-handlebars"); //only used for testing
 
 // Create an instance of the express app.
 var app = express();
@@ -30,8 +30,8 @@ app.use(function(req, res, next) {
 app.use(express.static(__dirname + '/'));
 
 //always shows main layout, route will determine what gets rendered inside of {{{body}}}
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// app.set("view engine", "handlebars");
 
 //Router
 // =============================================================

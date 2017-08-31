@@ -68,7 +68,7 @@ var initListeners = function(){
     //listener for light toggle
     $('#light-toggle').change(function(){
         var id=$(this).attr("data-id");
-        console.log("data id for change: " + id);
+        //console.log("data id for change: " + id);
         if($(this).attr("data-state") === "false"){
             //change data attr state and the newState to be saved to the DB.
             $(this).attr("data-state", "true"); 
@@ -80,14 +80,14 @@ var initListeners = function(){
             var newState = false;        
         }; 
         var updates = "id="+ id+"&lightOn="+newState;
-        console.log(updates);
+        //console.log(updates);
         updateDB(updates);
     });
 
     //listener for pump toggle
     $('#pump-toggle').change(function(){
         var id=$(this).attr("data-id");
-        console.log("data id for change: " + id);
+        //console.log("data id for change: " + id);
         if($(this).attr("data-state") === "false"){
             //change data attr state and the newState to be saved to the DB.
             $(this).attr("data-state", "true"); 
@@ -99,7 +99,7 @@ var initListeners = function(){
             var newState = false;        
         }; 
         var updates = "id="+ id+"&pumpOn="+newState;
-        console.log(updates);
+        //console.log(updates);
         updateDB(updates);
 
         setTimeout(function(){
@@ -136,7 +136,7 @@ var initListeners = function(){
             var updates = "id="+ id+"&autoLightOn="+newState+"&autoPumpOn="+newState;
             //$('#pump-toggle').bootstrapToggle('off').bootstrapToggle('enable');
         };
-        console.log(updates);
+        //console.log(updates);
         updateDB(updates);
     }); 
 } 

@@ -73,18 +73,11 @@ var drawGauge = function(water) {
 		config1.circleThickness = 0.2;
 		config1.textVertPosition = 0.2;
         config1.waveAnimateTime = 1000;
-
-        window.onresize = function(){
-            $('.fill-gauge').empty();
-            drawGauge(water);
-        }
 }
 
 var drawChart = function(data, targetDiv, keys, yAxisLabel, ymin, ymax, colors){
     var chart = $(targetDiv);
     chart.empty();
-    //console.log("width: " + chart.width());
-    //console.log("height: " + chart.height());
 
     var margin = {top: 20, right: 80, bottom: 30, left: 50},
     width = chart.width() - margin.left - margin.right,

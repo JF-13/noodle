@@ -16,7 +16,9 @@ var initChart = function(sensorId){
             drawAllCharts(data);
             dashboard(data);
             window.onresize = function(){
-                drawAllCharts(data)
+                $('.fill-gauge').empty();
+                drawAllCharts(data);
+                dashboard(data);
             };
         },
 
@@ -58,7 +60,7 @@ var dashboard = function(data) {
         } else if(light < 1) {
           var lightDisplay = ("Bright");
         }
-        $("#light").html(lightDisplay);
+        $("#light").html(lightDisplay);  
 }
 
 var drawGauge = function(water) {
@@ -70,7 +72,12 @@ var drawGauge = function(water) {
 		config1.waveColor = "#FFDDDD";
 		config1.circleThickness = 0.2;
 		config1.textVertPosition = 0.2;
-		config1.waveAnimateTime = 1000;
+        config1.waveAnimateTime = 1000;
+
+        window.onresize = function(){
+            $('.fill-gauge').empty();
+            drawGauge(water);
+        }
 }
 
 var drawChart = function(data, targetDiv, keys, yAxisLabel, ymin, ymax, colors){

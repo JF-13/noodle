@@ -3,7 +3,7 @@ var counter = 0;
 var initChart = function(sensorId){
     //GET THE DATA
     $.ajax({
-        
+
         type: 'GET',
         // The URL to make the request to.
         url: 'https://noodle-northwestern.herokuapp.com/api/data/' + sensorId,
@@ -12,7 +12,7 @@ var initChart = function(sensorId){
             withCredentials: false
         },
         success: function(data) {
-            counter = 0;    
+            counter = 0;
             drawAllCharts(data);
             dashboard(data);
             window.onresize = function(){
@@ -31,9 +31,9 @@ var initChart = function(sensorId){
 var drawAllCharts = function(data) {
         drawChart(data, "#chart3", ["soil", "water", "light"], "Reading", 0, 1, ["rgb(41,128,185)", "#31b0d5","#ec971f"]);
         drawChart(data, "#chart1", ["temp"], "Temperature (F)", 65, 85, ["rgb(192,57,43)"]) ;
-        drawChart(data, "#chart2", ["humid"], "Humidity (%)", 40, 70, ["rgb(22,160,133)"]);      
+        drawChart(data, "#chart2", ["humid"], "Humidity (%)", 40, 70, ["rgb(22,160,133)"]);
 }
-        
+
 var dashboard = function(data) {
         //loading sensor data for dashboard
         var temp = (data[(data.length-1)].temp);
@@ -46,7 +46,7 @@ var dashboard = function(data) {
         var soil= (data[(data.length-1)].soil);
         soil = soil.toString().substr(0,4);
         $("#soil").html((soil) + "%");
-        
+
         var water = (data[(data.length-1)].water).substr(0, 4);
         drawGauge(water);
 
@@ -60,8 +60,8 @@ var dashboard = function(data) {
         } else if(light < 1) {
           var lightDisplay = ("Bright");
         }
-        $("#light").html(lightDisplay);  
-}
+        $("#light").html(lightDisplay);
+};
 
 var drawGauge = function(water) {
     	var gauge1 = loadLiquidFillGauge("fillgauge1", water*100);
@@ -82,10 +82,10 @@ var drawChart = function(data, targetDiv, keys, yAxisLabel, ymin, ymax, colors){
     var margin = {top: 20, right: 80, bottom: 30, left: 50},
     width = chart.width() - margin.left - margin.right,
     height = chart.height() - margin.top - margin.bottom;
-    
+
     var parseDate = d3.time.format("%Y%m%d").parse;
     //var bisectDate = d3.bisector(function(d) { return d.date; }).left;
-    
+
     var num_ticks = 12;
     if (width < 300) {
         num_ticks = 3;
@@ -96,36 +96,36 @@ var drawChart = function(data, targetDiv, keys, yAxisLabel, ymin, ymax, colors){
 
     var x = d3.time.scale()
     .range([0, width]);
-    
+
     var y = d3.scale.linear()
     .range([height, 0]);
-    
+
     let color = d3.scale.ordinal()
     .domain(keys)
     .range(colors);
-    
+
     var xAxis = d3.svg.axis()
     .scale(x)
     .orient("bottom");
-    
+
     var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left");
 
     var yScale = d3.scale.linear()
     .range([height, 0]);
-    
+
     var line = d3.svg.line()
     .interpolate("basis")
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y(d.reading); });
-    
+
     var svg = d3.select(targetDiv).append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-    
+
     //this line chooses which keys we want to have as series in the chart
     color.domain(keys);
 
@@ -207,28 +207,28 @@ var drawChart = function(data, targetDiv, keys, yAxisLabel, ymin, ymax, colors){
         .style("font-size","12px")
         .call(d3.legend)
 
-    setTimeout(function() { 
+    setTimeout(function() {
     legend
         .style("font-size","20px")
         .attr("data-style-padding",10)
         .call(d3.legend)
     },1000)*/
     // draw legend
-  var legendSpace = 35; // 450/number of issues (ex. 40)    
+  var legendSpace = 35; // 450/number of issues (ex. 40)
 
   sensor.append("rect")
       .attr("width", 10)
-      .attr("height", 10)                                    
-      .attr("x", width + (margin.right/3) - 15) 
+      .attr("height", 10)
+      .attr("x", width + (margin.right/3) - 15)
       .attr("y", function (d, i) { return (legendSpace)+i*(legendSpace) - 8; })  // spacing
       .attr("fill",function(d) {
         return d.visible ? color(d.name) : "#F1F1F2";
-             // If array key "visible" = true then color rect, if not then make it grey 
+             // If array key "visible" = true then color rect, if not then make it grey
       })
 
       .attr("class", "legend-box")
 
-      .on("click", function(d){ // On click make d.visible 
+      .on("click", function(d){ // On click make d.visible
         d.visible = !d.visible; // If array key for this data selection is "visible" = true then make it false, if false then make it true
 
        /* maxY = findMaxY(keys); // Find max Y rating value categories data with "visible"; true
@@ -258,7 +258,7 @@ var drawChart = function(data, targetDiv, keys, yAxisLabel, ymin, ymax, colors){
 
         d3.select("#line-" + d.name.replace(" ", "").replace("/", ""))
           .transition()
-          .style("stroke-width", 2.5);  
+          .style("stroke-width", 2.5);
       })
 
       .on("mouseout", function(d){
@@ -272,17 +272,17 @@ var drawChart = function(data, targetDiv, keys, yAxisLabel, ymin, ymax, colors){
           .transition()
           .style("stroke-width", 1.5);
       })
-      
+
   sensor.append("text")
-      .attr("x", width + (margin.right/3)) 
-      .attr("y", function (d, i) { return (legendSpace)+i*(legendSpace); })  // (return (11.25/2 =) 5.625) + i * (5.625) 
-      .text(function(d) { return d.name; }); 
+      .attr("x", width + (margin.right/3))
+      .attr("y", function (d, i) { return (legendSpace)+i*(legendSpace); })  // (return (11.25/2 =) 5.625) + i * (5.625)
+      .text(function(d) { return d.name; });
 
 
   // End Data callback function
-  
+
   function findMaxY(data){  // Define function "findMaxY"
-    var maxYValues = data.map(function(d) { 
+    var maxYValues = data.map(function(d) {
       if (d.visible){
         return d3.max(d.values, function(value) { // Return max rating value
           return value.rating; })

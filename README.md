@@ -7,8 +7,9 @@
 
 
 
-![alt-text-1](public/assets/images/info2.png "size-comparison-1") ![alt-text-2](public/assets/images/info3.png "size-comparison-2")
 
+<img src="public/assets/images/info3.png" width="50%" style="float: right"/>
+<img src="public/assets/images/info2.png" width="50%" style="float: right"/>
 
 ##### The repository you are in now contains the code that goes on your server and the link below points to the code we used to upload our plant data to the database from the raspberry pi.
 

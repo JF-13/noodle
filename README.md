@@ -5,7 +5,7 @@
 
 ##### This project allows you to remotely water and light your plant anywhere you have an internet connection as well as track the plants temperature, exposure to light, soil humidity, air humidity, and water reservoir.
 
-[Sensor Code Repo](https://noodle-northwestern.herokuapp.com/ "sensor code repository")
+[Application](https://noodle-northwestern.herokuapp.com/ "sensor code repository")
 
 <img src="public/assets/images/ui.png" width="800px"/>
 
